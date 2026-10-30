@@ -13,10 +13,10 @@ Replaces data based on contextual keywords identified nearby. For instance, if '
 - `-h`: Show help message and exit
 - `--input`: The input text to process.
 - `--keywords`: Comma-separated list of contextual keywords.
-- `--window_size`: No description provided
+- `--window_size`: The number of words to check around the target (default: 10).
 - `--replacement_value`: The value to replace matched data with. If not provided, a random float is generated.
-- `--faker_locale`: No description provided
-- `--log_level`: No description provided
+- `--faker_locale`: The Faker locale to use for generating replacement values (default: en_US).
+- `--log_level`: Set the logging level (default: INFO).
 
 ## License
 Copyright (c) ShadowGuardAI

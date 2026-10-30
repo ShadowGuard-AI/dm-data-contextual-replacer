@@ -1,7 +1,6 @@
 import argparse
 import logging
 import re
-import random
 from faker import Faker
 
 # Configure logging
@@ -71,7 +70,12 @@ class DataContextualReplacer:
                         if self.replacement_value is not None:
                             replacement = self.replacement_value
                         else:
-                            replacement = str(round(random.uniform(10000, 1000000), 2)) # Example range, configurable
+                            # The docstring has always said the float comes
+                            # from Faker; until now it came from
+                            # random.uniform and the Faker instance built in
+                            # __init__ was never used. pyfloat with the same
+                            # bounds makes the documented source true.
+                            replacement = str(self.fake.pyfloat(min_value=10000, max_value=1000000, right_digits=2))
                         new_words.append(replacement)
                     else:
                         new_words.append(word)
