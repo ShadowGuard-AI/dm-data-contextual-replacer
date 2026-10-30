@@ -29,7 +29,11 @@ class DataContextualReplacer:
         if not isinstance(window_size, int) or window_size <= 0:
             raise ValueError("Window size must be a positive integer.")
 
-        self.keywords = keywords
+        # Matching lowercases the context window before testing, so the
+        # keywords are normalised the same way here. Without this a
+        # capitalised keyword such as "Salary" could never match anything,
+        # and the run silently replaced nothing.
+        self.keywords = [keyword.lower() for keyword in keywords]
         self.window_size = window_size
         self.replacement_value = replacement_value
         self.fake = Faker(faker_locale)  # Moved Faker instantiation here
@@ -51,6 +55,11 @@ class DataContextualReplacer:
             words = text.split()
             new_words = []
             for i, word in enumerate(words):
+                # Known limit: tokens keep any attached punctuation, so
+                # "50000," fails the number test and is left unmasked even
+                # next to a keyword. Splitting on whitespace only is what
+                # lets the output be rejoined losslessly, so the trade is
+                # kept and stated rather than hidden.
                 if self._is_number(word):
                     # Check for keywords within the window
                     start = max(0, i - self.window_size)
