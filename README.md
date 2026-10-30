@@ -1,3 +1,5 @@
+![Banner](banner.png)
+
 # dm-data-contextual-replacer
 Replaces data based on contextual keywords identified nearby. For instance, if 'salary' or 'income' appears within N words of a number, replace the number with a masked value. Requires a pre-defined list of contextual keywords. - Focused on Tools designed to generate or mask sensitive data with realistic-looking but meaningless values
 
