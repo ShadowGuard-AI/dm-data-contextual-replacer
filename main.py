@@ -35,6 +35,7 @@ class DataContextualReplacer:
         self.keywords = [keyword.lower() for keyword in keywords]
         self.window_size = window_size
         self.replacement_value = replacement_value
+        self.replacement_count = 0
         self.fake = Faker(faker_locale)  # Moved Faker instantiation here
 
     def replace_data(self, text):
@@ -51,15 +52,13 @@ class DataContextualReplacer:
             if not isinstance(text, str):
                 raise TypeError("Input must be a string.")
 
+            self.replacement_count = 0
             words = text.split()
             new_words = []
             for i, word in enumerate(words):
-                # Known limit: tokens keep any attached punctuation, so
-                # "50000," fails the number test and is left unmasked even
-                # next to a keyword. Splitting on whitespace only is what
-                # lets the output be rejoined losslessly, so the trade is
-                # kept and stated rather than hidden.
-                if self._is_number(word):
+                parsed = self._parse_token(word)
+                if parsed is not None:
+                    lead, core, trail = parsed
                     # Check for keywords within the window
                     start = max(0, i - self.window_size)
                     end = min(len(words), i + self.window_size + 1)
@@ -70,13 +69,9 @@ class DataContextualReplacer:
                         if self.replacement_value is not None:
                             replacement = self.replacement_value
                         else:
-                            # The docstring has always said the float comes
-                            # from Faker; until now it came from
-                            # random.uniform and the Faker instance built in
-                            # __init__ was never used. pyfloat with the same
-                            # bounds makes the documented source true.
                             replacement = str(self.fake.pyfloat(min_value=10000, max_value=1000000, right_digits=2))
-                        new_words.append(replacement)
+                        new_words.append(f"{lead}{replacement}{trail}")
+                        self.replacement_count += 1
                     else:
                         new_words.append(word)
                 else:
@@ -87,6 +82,24 @@ class DataContextualReplacer:
         except Exception as e:
             logging.error(f"Error processing text: {e}")
             raise
+
+    def _parse_token(self, word):
+        """Split a token into attached punctuation and its numeric core.
+
+        Returns (lead, core, trail) when the core is a number, else None.
+        A bare number returns empty lead and trail.
+        """
+        if self._is_number(word):
+            return ("", word, "")
+        match = re.match(r"^([^A-Za-z0-9]*)([+-]?(?:\d+\.?\d*|\.\d+))([^A-Za-z0-9]*)$", word)
+        if not match:
+            return None
+        lead, core, trail = match.groups()
+        if not lead and not trail:
+            return None
+        if self._is_number(core):
+            return (lead, core, trail)
+        return None
 
     def _is_number(self, string):
        """
@@ -178,6 +191,9 @@ def main():
             faker_locale=args.faker_locale
         )
         masked_text = replacer.replace_data(args.input)
+        if replacer.replacement_count == 0:
+            print("No values were replaced.")
+            exit(1)
         print(masked_text)
 
     except Exception as e:

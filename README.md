@@ -9,6 +9,8 @@ Replaces data based on contextual keywords identified nearby. For instance, if '
 ## Usage
 `./dm-data-contextual-replacer [params]`
 
+A number with punctuation attached, such as `50000,` beside a keyword, is masked and the punctuation is kept in the output. When no value is replaced, the run prints `No values were replaced.` and exits 1.
+
 ## Parameters
 - `-h`: Show help message and exit
 - `--input`: The input text to process.
