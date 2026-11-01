@@ -53,6 +53,12 @@ class DataContextualReplacer:
                 raise TypeError("Input must be a string.")
 
             self.replacement_count = 0
+            # Splitting on whitespace and rejoining with single spaces
+            # means the output never preserves the input's spacing:
+            # line breaks, tabs, and runs of spaces all come back as
+            # one space. Only numbers are candidates for replacement,
+            # because _parse_token returns None for anything else, so
+            # a sensitive word near a keyword is never touched.
             words = text.split()
             new_words = []
             for i, word in enumerate(words):
@@ -64,6 +70,11 @@ class DataContextualReplacer:
                     end = min(len(words), i + self.window_size + 1)
                     context = words[start:i] + words[i + 1:end] # Exclude current word
 
+                    # Keyword testing is a substring test over the
+                    # joined context, not a word test: the keyword
+                    # "earn" is found inside "learning" and "earnings",
+                    # so numbers near words that merely contain a
+                    # keyword are replaced as well.
                     if any(keyword in ' '.join(context).lower() for keyword in self.keywords):
                         logging.debug(f"Found keyword near '{word}'. Masking...")
                         if self.replacement_value is not None:
@@ -112,6 +123,10 @@ class DataContextualReplacer:
            bool: True if the string is a number, False otherwise.
        """
        try:
+           # float() is generous: it accepts "nan", "inf", and exponent
+           # forms like "1e5" as numbers. A bare "nan" token therefore
+           # counts as a numeric value here and can be replaced when a
+           # keyword stands near it, even though no digits are in it.
            float(string)
            return True
        except ValueError:
