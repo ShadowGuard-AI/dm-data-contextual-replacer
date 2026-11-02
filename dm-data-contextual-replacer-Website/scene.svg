@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 300" role="img" aria-label="The collector's cabinet in three bands: an album leaf turning with its ribbon in the back band, index tabs flipping and a roller date stamp trundling and shedding pale rings in the middle band, and a first day cover gliding low on an unseen tray in the front band">
+<rect width="900" height="300" fill="#d9cba6"/>
+<rect x="0" y="0" width="900" height="100" fill="#e6dcc0"/>
+<g>
+<rect x="330" y="14" width="240" height="76" fill="#f0e7cb" stroke="#2c2622" stroke-width="2"/>
+<g>
+<rect x="452" y="14" width="118" height="76" fill="#e0d2a8" stroke="#2c2622" stroke-width="2"/>
+<polygon points="500,90 512,90 509,116 506,106 503,116" fill="#a42126"/>
+<animateTransform attributeName="transform" type="rotate" values="0 452 52; -14 452 52; 0 452 52" dur="9s" repeatCount="indefinite"/>
+</g>
+<g fill="#7a5432"><rect x="120" y="22" width="14" height="62"/><rect x="640" y="18" width="14" height="66"/><rect x="770" y="26" width="14" height="58"/></g>
+<g><rect x="180" y="30" width="8" height="44" fill="#c9a227"><animate attributeName="y" values="30; 44; 30" dur="7s" repeatCount="indefinite"/></rect></g>
+<g><rect x="700" y="28" width="8" height="44" fill="#c9a227"><animate attributeName="y" values="28; 40; 28" dur="8s" repeatCount="indefinite"/></rect></g>
+</g>
+<rect x="0" y="100" width="900" height="100" fill="#7a5432"/>
+<g fill="#f0e7cb" stroke="#2c2622" stroke-width="2">
+<g><rect x="90" y="118" width="34" height="52"/><animateTransform attributeName="transform" type="rotate" values="0 90 170; -16 90 170; 0 90 170" dur="5.5s" repeatCount="indefinite"/></g>
+<g><rect x="150" y="118" width="34" height="52"/><animateTransform attributeName="transform" type="rotate" values="0 150 170; -16 150 170; 0 150 170" dur="6.5s" begin="1s" repeatCount="indefinite"/></g>
+<g><rect x="210" y="118" width="34" height="52"/><animateTransform attributeName="transform" type="rotate" values="0 210 170; -16 210 170; 0 210 170" dur="7.5s" begin="2s" repeatCount="indefinite"/></g>
+</g>
+<g fill="none" stroke="#c9a227" stroke-width="3" opacity="0.75"><circle cx="430" cy="168" r="13"/><circle cx="478" cy="168" r="13"/><circle cx="526" cy="168" r="13"/></g>
+<g>
+<circle cx="600" cy="140" r="17" fill="#2c2622"/><rect x="578" y="157" width="44" height="22" fill="#5e3e24"/>
+<rect x="592" y="179" width="16" height="12" fill="#2c2622"/>
+<animateTransform attributeName="transform" type="translate" values="0 0; -120 0; 0 0" dur="11s" repeatCount="indefinite"/>
+</g>
+<rect x="0" y="200" width="900" height="100" fill="#5e3e24"/>
+<g>
+<rect x="240" y="222" width="300" height="58" fill="#f0e7cb" stroke="#2c2622" stroke-width="2"/>
+<rect x="486" y="230" width="42" height="42" fill="#c9a227"/>
+<g fill="none" stroke="#2c2622" stroke-width="3"><circle cx="478" cy="248" r="21"/><circle cx="478" cy="248" r="13"/></g>
+<animateTransform attributeName="transform" type="translate" values="0 0; 150 0; 0 0" dur="13s" repeatCount="indefinite"/>
+</g>
+</svg>

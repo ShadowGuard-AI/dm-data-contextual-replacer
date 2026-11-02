@@ -1,166 +1,61 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Dm Data Contextual Replacer: what it is, how it runs, where it stops</title>
-<meta name="description" content="Dm Data Contextual Replacer is one of my projects. The README in the repo is short, so this page sticks to what the files themselves show.">
-<style>
-:root {
-  --bg: #101214; --panel: #1c1f22; --ink: #eee8dc;
-  --mut: #25292d;
-  --acc: #e8b339; --acc2: #c75432;
-  --line: #1c1f22;
-}
-* { box-sizing: border-box; }
-body { margin: 0; background: var(--bg); color: var(--ink);
-  font-family: Georgia, 'Times New Roman', serif; line-height: 1.55; }
-code, pre, .mono { font-family: 'Courier New', monospace; }
-a { color: var(--acc2); }
-.hero { padding: 3rem 6vw 1rem; }
-.hero img.banner { width: 100%; height: auto; border: 1px solid var(--line);
-  border-radius: 10px; }
-.logo { width: 92px; height: 92px; border-radius: 18px;
-  border: 1px solid var(--line); }
-h1 { font-size: 2.4rem; margin: 0.4em 0 0.1em; }
-h2 { border-bottom: 2px solid var(--acc); padding-bottom: 0.2em;
-  margin-top: 2em; }
-.lede { font-size: 1.15rem; max-width: 62ch; }
-main { padding: 0 6vw 3rem; max-width: 1180px; margin: 0 auto; }
-.grid { display: grid; gap: 1rem;
-  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); }
-.card { background: var(--panel); border: 1px solid var(--line);
-  border-radius: 12px; padding: 1rem 1.2rem; }
-.card.pop { animation: rise 0.7s ease both; }
-@keyframes rise { from { opacity: 0; transform: translateY(14px); }
-  to { opacity: 1; transform: none; } }
-pre.code { background: #101014; color: #e8e6df; padding: 1rem 1.2rem;
-  border-radius: 12px; overflow-x: auto; font-size: 0.86rem;
-  border-left: 5px solid var(--acc); }
-table { border-collapse: collapse; width: 100%; }
-td, th { border-bottom: 1px solid var(--line); padding: 0.45rem 0.6rem;
-  text-align: left; }
-.shots { display: grid; gap: 1rem;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); }
-.shots img { width: 100%; height: auto; border: 1px solid var(--line);
-  border-radius: 10px; background: #f4f1e8; }
-footer { padding: 2rem 6vw; border-top: 1px solid var(--line);
-  color: var(--mut); }
-.rail { display: flex; gap: 1.2rem; align-items: flex-start; }
-.rail nav { position: sticky; top: 1rem; min-width: 180px; }
-@media (max-width: 760px) { .rail { flex-direction: column; }
-  .rail nav { position: static; } }
-@media (prefers-reduced-motion: reduce) {
-  .card.pop { animation: none; } * { scroll-behavior: auto; } }
-</style>
-</head>
-<body class="layout-term">
-<!-- This page exists for dm-data-contextual-replacer alone: the layout (terminal-frame),
-     the colors, and the type were picked for this project, not
-     shared with the other project pages. The code block below is
-     copied from the file it names, line for line. If it looks
-     plain, that is because the project is plain, and I would
-     rather the page match the project than dress it up. The one
-     thing I will not do here is oversell: what this project does
-     not do is stated on the page, not hidden from it. -->
-<header class="hero">
-  <img class="logo" src="assets/logo.png" alt="Dm Data Contextual Replacer logo">
-  <img class="banner" src="assets/banner.png" alt="">
-  <h1>Dm Data Contextual Replacer</h1>
-  <p class="mono"><a href="https://github.com/ShadowGuard-AI/dm-data-contextual-replacer">github.com/ShadowGuard-AI/dm-data-contextual-replacer</a></p>
-</header>
+<!doctype html><html lang="en-GB"><head><meta charset="utf-8"><title>dm-data-contextual-replacer: Postmark Collector's First Day Covers</title>
+<style>@font-face{font-family:Disp;src:url("fonts/BungeeInline.ttf")}@font-face{font-family:Text;src:url("fonts/Cabin.ttf")}
+body{background:#f0e7cb;font-family:Text,sans-serif;color:#211d1a;margin:0}main{max-width:920px;margin:0 auto;padding:28px}
+h1,h2,h3{font-family:Disp,serif;color:#2c2622}section{background:#e2d5ae;padding:18px 22px;margin:16px 0;border:2px solid #7a5432;position:relative}
+section::before{content:"";position:absolute;left:0;top:0;right:0;height:22px;background:#7a5432}
+section h2{margin-top:30px}.dot{display:inline-block;width:11px;height:11px;border-radius:50%;background:#a42126;margin-right:8px}
+a{color:#2c2622}a::before{content:"";display:inline-block;width:8px;height:8px;border-radius:50%;background:#a42126;margin-right:6px}a:hover::before{background:#6e1418}
+img{max-width:100%}button{background:#f0e7cb;color:#2c2622;border:2px solid #2c2622;padding:12px 20px;margin:4px;font-family:Disp,serif;box-shadow:0 -6px 0 #e2d5ae inset,0 0 0 4px #f0e7cb,0 0 0 5px #2c2622}
+button:hover{color:#000}button:active{transform:translateY(2px);box-shadow:none}button:focus{outline:3px double #2c2622;outline-offset:3px}
+.label{display:inline-block;background:#f0e7cb;border:1px solid #2c2622;padding:2px 8px;font-size:13px}
+pre{white-space:pre-wrap;font-family:Text,sans-serif;background:#f4edd6;padding:14px;border:1px solid #7a5432}code{font-family:Text,sans-serif}
+table{border-collapse:collapse}td{border:1px solid #7a5432;padding:6px 10px;background:#f0e7cb}</style></head><body><main>
+<img src="intro-banner.png" alt="Introduction banner: one envelope face up in tall window light, an illegible ring over a plain stamp, no name anywhere">
+<h1>dm-data-contextual-replacer: Postmark Collector's First Day Covers</h1>
+<p>dm-data-contextual-replacer: Postmark Collector's First Day Covers names itself in that form throughout this page. The page is built as a cabinet: vellum walls, panels a shade deeper in the same vellum, headings in Bungee Inline in iron gall ink, body copy in Cabin in near black, miniature catalogue drawers marking each chapter, and oak trimming panel edges and rules. A sealing wax red dot flags the chapter a visitor is standing in, that chapter only, starting with plate one below.</p>
+<img src="logo.png" alt="Logo: one first day cover, a red stamp block in the corner, iron gall cancellation rings overlapping its edge"><img src="banner.png" alt="Wordmark banner: the cover forward on the desk, the repository name once on a catalogue drawer label">
+<img src="scene.svg" alt="Animated scene in three bands">
+<div><button type="button">Replace Near Keywords</button><button type="button">Show the Catalogue Entry</button></div>
+<h3>Nearness Decides</h3><h3>Punctuation Stays</h3><h3>Nothing Replaced Means Exit 1</h3><h3>A Random Float When No Value Is Given</h3>
+<img src="sep-heavy.svg" alt="Heavy separator: a procession of pale postmark rings">
+<section><h2><span class="dot"></span>Plate one: the job, bluntly</h2><p>Read the words surrounding a numeral. A keyword from the caller's list inside the window: swap the numeral out for a masked value. No listed keyword nearby: leave it standing. The list is mandatory and the caller writes it. Salary or income sitting within N words of a numeral marks that numeral for exchange, exactly as the README frames it. The tool sits with a family of tools that fabricate or mask sensitive data, plausible on the surface, empty underneath.</p></section>
+<section><h2>Plate two: acquisition</h2><p><code>git clone https://github.com/ShadowGuardAI/dm-data-contextual-replacer</code></p><p>Marginal note, flagged as a fault and not corrected in the line above: the organisation inside that URL is spelled without its hyphen. The welded form is ShadowGuardAI. Properly the organisation carries a hyphen: ShadowGuard-AI. Tally across the whole live README: the welded form turns up twice, clone line once, licence line once. The hyphenated form turns up never.</p></section>
+<section><h2>Plate three: invocation</h2><p><code>./dm-data-contextual-replacer [params]</code></p><p>Footnote A, at full type size: punctuation riding on a qualifying number rides on through. A number with punctuation attached, such as <code>[PLACEHOLDER NUMBER],</code> beside a keyword, is masked and the punctuation is kept in the output. Footnote B, at full type size: replace nothing and the run says so, printing <code>No values were replaced.</code> and departing at exit 1. Where the README punctuation illustration used a real numeral, this plate shows a placeholder token, under the redaction flag recorded in the final record section.</p></section>
+<section><h2>Plate four: the dials</h2><table>
+<tr><td>-h</td><td>Show help message and exit</td></tr>
+<tr><td>--input</td><td>The input text to process. Text, mark that. Not a pathname.</td></tr>
+<tr><td>--keywords</td><td>Comma-separated list of contextual keywords.</td></tr>
+<tr><td>--window_size</td><td>The number of words to check around the target (default: 10).</td></tr>
+<tr><td>--replacement_value</td><td>The value to replace matched data with. If not provided, a random float is generated.</td></tr>
+<tr><td>--faker_locale</td><td>The Faker locale to use for generating replacement values (default: en_US).</td></tr>
+<tr><td>--log_level</td><td>Set the logging level (default: INFO).</td></tr>
+</table></section>
+<img src="sep-light.svg" alt="Light separator: two pale postmark rings, centred and short">
+<section><h2>Plate five: honest absences</h2><p>Nobody documented an output dial, so this site invents no destination for results. Nobody documented a file to read from, and the input dial takes raw text. Nobody documented a seed, so the random float must never be sold as reproducible. Nobody documented what happens when a window straddles a full stop, so this site stays silent there too. Beyond the punctuation illustration, no demonstration command, no specimen passage, and no specimen result appears anywhere in the README.</p></section>
+<section><h2>Plate six: rights</h2><p>Copyright (c) ShadowGuardAI</p><p>The line above is the README licence line exactly as printed, fault included: the welded organisation form again, with no year attached and nobody named. Alongside, kept separate, the LICENSE particulars: the file holds the MIT License; its holder is rendered as a pen name, then the leftover part of the name cut down to one initial, then @Epsilon0xCell; the span is 2025-2026. That initial stays unexpanded here, and the holder line is not reproduced. The two wordings diverge in shape, and the divergence stays on the page exactly as discovered.</p></section>
+<section><h2>Defects and limits, on the record</h2><p>Counting is not this program's habit: it measures word distance and swaps numerals, and tallies nothing. Where swapped results go is undocumented. Whether a run can be repeated is undocumented, and no seed exists. What an invocation looks like beyond name plus [params] is undocumented, and what a keyword list looks like typed by an actual caller is undocumented. This site fills none of those silences by guessing.</p></section>
+<section><h2>The preserved README record</h2><p>What follows is the live README, transcribed whole in one grip. One substitution only: the concrete numeral inside the usage footnote becomes a placeholder token, under the redaction flag, so the actual figure appears nowhere on this site. All remaining lines travel unchanged.</p><pre>![Banner](banner.png)
 
-<main>
-  <section class="rail">
-    <nav aria-label="on this page">
-      <p class="mono"><a href="#run">Run it</a><br>
-      <a href="#files">The files</a><br>
-      <a href="#sheets">The sheets</a><br>
-      <a href="https://github.com/ShadowGuard-AI/dm-data-contextual-replacer">The repo</a></p>
-    </nav>
-    <div>
-      <p class="lede">Dm Data Contextual Replacer is one of my projects. The README in the repo is short, so this page sticks to what the files themselves show.</p>
-      <div class="grid">
-        <div class="card pop"><h3>What it is</h3>
-          <p>Dm Data Contextual Replacer: 5 files, 229 counted
-          lines across Python 206, Markdown 22, Text 1. One job, done in the
-          open, in files you can read.</p></div>
-        <div class="card pop"><h3>The biggest piece</h3>
-          <p><code>main.py</code> carries the most
-          lines. If the project grows, that file is where the growth
-          lands first, for better or worse.</p></div>
-        <div class="card pop"><h3>The honest gap</h3>
-          <p>No test files yet. That is the honest gap, and the roadmap in the visuals folder says what the first one should cover.</p></div>
-      </div>
-      <section id="run">
-        <h2>Run it</h2>
-        <p>The repo README has the exact commands for this one. The
-        shape is the shape for most of my projects: clone it, read the
-        top file first so you know what will happen, then run it on
-        something you do not mind breaking.</p>
-        <p class="mono">$ git clone https://github.com/ShadowGuard-AI/dm-data-contextual-replacer.git<br>$ cd dm-data-contextual-replacer</p>
-      </section>
-      
-  <section aria-label="real code">
-    <h2>The code, as it sits in the repo</h2>
-    <p>From <code>main.py</code>, line 7 on. I did
-    not tidy it for the page. What you see is what the file has.</p>
-    <pre class="code"><code>logging.basicConfig(level=logging.INFO, format=&#x27;%(asctime)s - %(levelname)s - %(message)s&#x27;)
+# dm-data-contextual-replacer
+Replaces data based on contextual keywords identified nearby. For instance, if 'salary' or 'income' appears within N words of a number, replace the number with a masked value. Requires a pre-defined list of contextual keywords. - Focused on Tools designed to generate or mask sensitive data with realistic-looking but meaningless values
 
-class DataContextualReplacer:
-    &quot;&quot;&quot;
-    Replaces data based on contextual keywords identified nearby.
-    &quot;&quot;&quot;
+## Install
+`git clone https://github.com/ShadowGuardAI/dm-data-contextual-replacer`
 
-    def __init__(self, keywords, window_size=10, replacement_value=None, faker_locale=&#x27;en_US&#x27;):
-        &quot;&quot;&quot;
-        Initializes the DataContextualReplacer.
+## Usage
+`./dm-data-contextual-replacer [params]`
 
-        Args:
-            keywords (list): A list of contextual keywords.
-            window_size (int): The number of words to check around the target. Defaults to 10.
-            replacement_value (str, optional): The value to replace matched data with. If None, a random float is generated using Faker. Defaults to None.
-            faker_locale (str, optional): The Faker locale to use for generating replacement values. Defaults to &#x27;en_US&#x27;.
-        &quot;&quot;&quot;
-        if not isinstance(keywords, list):
-            raise TypeError(&quot;Keywords must be a list.&quot;)
-        if not all(isinstance(keyword, str) for keyword in keywords):
-            raise TypeError(&quot;All keywords must be strings.&quot;)
-        if not isinstance(window_size, int) or window_size &lt;= 0:</code></pre>
-  </section>
-      <section id="files">
-        <h2>The files that matter</h2>
-        <table><tr><th>File</th><th>Lines</th></tr>
-        <tr><td><code>main.py</code></td><td>206</td></tr>
-        <tr><td><code>README.md</code></td><td>22</td></tr>
-        <tr><td><code>requirements.txt</code></td><td>1</td></tr>
-        <tr><td><code>banner.png</code></td><td>0</td></tr>
-        <tr><td><code>logo.png</code></td><td>0</td></tr>
-        </table>
-        <p>Names doing the work: <span class="mono">DataContextualReplacer, setup_argparse, main, __init__, replace_data, _is_number</span>.</p>
-      </section>
-      <section id="sheets">
-        <h2>Drawn by hand</h2>
-        <p>I sketch my projects on notebook paper so I have to
-        understand them well enough to draw them. The full set,
-        with the counts and how they were counted, is the
-        <a href="https://github.com/ShadowGuard-AI/dm-data-contextual-replacer/tree/main/dm-data-contextual-replacer-Visuals">dm-data-contextual-replacer-Visuals</a>
-        folder in the repo. Nothing is drawn over the binder holes.
-        That is a rule, not a style.</p>
-        <div class="shots">
-          <img src="assets/architecture.png" alt="Hand drawn architecture sheet for Dm Data Contextual Replacer">
-          <img src="assets/flowchart.png" alt="Hand drawn flowchart sheet for Dm Data Contextual Replacer">
-          <img src="assets/product-map.png" alt="Hand drawn product map sheet for Dm Data Contextual Replacer">
-        </div>
-      </section>
-    </div>
-  </section>
-</main>
-<footer>
-  <p>Dm Data Contextual Replacer is one of my projects. This page was written
-  from the repo itself on 2026-10-30: the counts are the
-  repo's counts, the code is the repo's code, and the gaps are the
-  repo's gaps.</p>
-</footer>
-</body>
-</html>
+A number with punctuation attached, such as `[PLACEHOLDER NUMBER],` beside a keyword, is masked and the punctuation is kept in the output. When no value is replaced, the run prints `No values were replaced.` and exits 1.
+
+## Parameters
+- `-h`: Show help message and exit
+- `--input`: The input text to process.
+- `--keywords`: Comma-separated list of contextual keywords.
+- `--window_size`: The number of words to check around the target (default: 10).
+- `--replacement_value`: The value to replace matched data with. If not provided, a random float is generated.
+- `--faker_locale`: The Faker locale to use for generating replacement values (default: en_US).
+- `--log_level`: Set the logging level (default: INFO).
+
+## License
+Copyright (c) ShadowGuardAI</pre></section>
+</main></body></html>
