@@ -18,12 +18,12 @@ Replaces data based on contextual keywords identified nearby. For instance, if '
 ![Heavy separator](sep-heavy.svg)
 
 ## Install
-`git clone https://github.com/ShadowGuardAI/dm-data-contextual-replacer`
+`git clone https://github.com/ShadowGuard-AI/dm-data-contextual-replacer`
 
 ![Light separator](sep-light.svg)
 
 ## Usage
-`./dm-data-contextual-replacer [params]`
+`python3 main.py [options]`
 
 A number with punctuation attached, such as `[PLACEHOLDER NUMBER],` beside a keyword, is masked and the punctuation is kept in the output. When no value is replaced, the run prints `No values were replaced.` and exits 1.
 
@@ -47,7 +47,7 @@ A number with punctuation attached, such as `[PLACEHOLDER NUMBER],` beside a key
 ![Light separator](sep-light.svg)
 
 ## License
-Copyright (c) ShadowGuardAI
+This project is released under the MIT License. See the [LICENSE](LICENSE) file for details.
 
 ![Heavy separator](sep-heavy.svg)
 
